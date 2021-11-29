@@ -14,11 +14,11 @@ guessField.focus();
 console.log(randomNumber);
 function checkGuess() {
   let userGuess = Number(guessField.value);
-  
+ 
   if (guessCount === 10) {
     guesses.textContent = 'Propositions précédentes : ';
   }
-  compteur.textContent = `il vous reste ${guessCount}`;
+  compteur.textContent = `il vous reste ${guessCount} Tentative`;
   guesses.textContent += userGuess + ' ';
   
    if (userGuess === randomNumber) {
@@ -43,11 +43,22 @@ function checkGuess() {
      lastResult.textContent = 'Faux !';
      lastResult.style.backgroundColor = 'red';
      if (userGuess < randomNumber) {
-      lowOrHi.textContent = 'Le nombre saisi est trop petit !';
+      lowOrHi.textContent = `Le nombre ${userGuess} < ??`;
 
      } else if (userGuess > randomNumber) {
-      lowOrHi.textContent = 'Le nombre saisi est trop grand !';
+      lowOrHi.textContent = `Le nombre ${userGuess} > ??`;
      }
+     if (userGuess < 1 || userGuess > 100) {
+      alert("please enter a number between 1 and 100");
+      compteur.textContent = '';
+      guesses.textContent = '';
+      lastResult.textContent = '';
+      lowOrHi.textContent = '';
+      lastResult.style.backgroundColor = '';
+      guessCount = 10;
+
+      
+  }
 
   }
   guessCount--;

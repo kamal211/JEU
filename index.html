@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&family=Raleway:wght@700&family=Wallpoet&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-  <body>
-    <h1>Number guessing game</h1>
-
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
-
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
+  <body id="bloc-page">
+    <h1 id="title">GUESS GAME</h1>
+    
+    <div class="form"> 
+      <label id="guesshere" for="guessField">GUESS HERE </label>
       <input type="number"  id="guessField" class="guessField">
       <input type="submit" value="Submit guess" class="guessSubmit">
     </div>
-
     <div class="resultParas">
-        <p class="chance"></p>
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
+     
+      <p class="chance">Number of tries:</p>
+      <p class="guesses">Previous Guess:</p>
+      <p class="lastResult">last result:</p>
+      <p class="lowOrHi">Your Guess:</p>
     </div>
+    <div class="rules">
+      <h2>RULES</h2>
+      <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+      </div>
      <script src="main.js"></script>
   </body>
 </html>

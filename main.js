@@ -18,15 +18,8 @@ function checkGuess() {
   if (guessCount === 10) {
     guesses.textContent = 'Propositions précédentes : ';
   }
-  compteur.textContent = `il vous reste ${guessCount} Tentative`;
+  compteur.textContent = ` Tentative:${guessCount} `;
   guesses.textContent += userGuess + ' ';
-  
-   if (userGuess === randomNumber) {
-    lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
-    lastResult.style.backgroundColor = 'green';
-    lowOrHi.textContent = '';
-    setGameOver();
-  }
   if (guessCount>= 8 && userGuess === randomNumber ) {
     lastResult.textContent = 'Bravo, vous etes un Génie !!!';
     lastResult.style.backgroundColor = 'green';
@@ -35,6 +28,7 @@ function checkGuess() {
     lastResult.textContent = `Félicitations, vous avez gagné après ${guessCount = 10 - guessCount} Tentatives`
     lastResult.style.backgroundColor = 'green';
   }
+  
   else if (guessCount === 0) {
      lastResult.textContent =  'Cest raté !!';
      setGameOver();
@@ -43,10 +37,10 @@ function checkGuess() {
      lastResult.textContent = 'Faux !';
      lastResult.style.backgroundColor = 'red';
      if (userGuess < randomNumber) {
-      lowOrHi.textContent = `Le nombre ${userGuess} < ??`;
+      lowOrHi.textContent = `${userGuess} is smaller`;
 
      } else if (userGuess > randomNumber) {
-      lowOrHi.textContent = `Le nombre ${userGuess} > ??`;
+      lowOrHi.textContent = `${userGuess} is higher`;
      }
      if (userGuess < 1 || userGuess > 100) {
       alert("please enter a number between 1 and 100");
@@ -56,8 +50,6 @@ function checkGuess() {
       lowOrHi.textContent = '';
       lastResult.style.backgroundColor = '';
       guessCount = 10;
-
-      
   }
 
   }

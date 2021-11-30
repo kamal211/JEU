@@ -4,78 +4,92 @@ let guesses = document.querySelector('.guesses');
 let lastResult = document.querySelector('.lastResult');
 let lowOrHi = document.querySelector('.lowOrHi');
 let compteur = document.querySelector('.chance')
-
 let guessSubmit = document.querySelector('.guessSubmit');
 let guessField = document.querySelector('.guessField');
 
 let guessCount = 9;
-let resetButton;
+let resetButton = document.querySelector('.button');
+resetButton.style.display = 'none';
 guessField.focus();
 console.log(randomNumber);
-function checkGuess() {
+function checkGuess() 
+{
   let userGuess = Number(guessField.value);
- 
-  if (guessCount === 10) {
-    guesses.textContent = 'Propositions précédentes : ';
-  }
-  compteur.textContent = ` Tentative:${guessCount} `;
-  guesses.textContent += userGuess + ' ';
-  if (guessCount>= 8 && userGuess === randomNumber ) {
-    lastResult.textContent = 'Bravo, vous etes un Génie !!!';
+  compteur.textContent = ` Number of turns:${guessCount} `;
+   guesses.textContent += userGuess + ' ';
+  if (guessCount>= 8 && userGuess === randomNumber )
+  {
+    lastResult.textContent = 'True, you are a genius !!!';
     lastResult.style.backgroundColor = 'green';
+    setGameOver();
   }
-  else if (guessCount<= 7  && userGuess === randomNumber ) {
-    lastResult.textContent = `Félicitations, vous avez gagné après ${guessCount = 10 - guessCount} Tentatives`
+
+  else if (guessCount<= 7  && userGuess === randomNumber )
+  {
+    lastResult.textContent = `Congratulations, you won after ${guessCount = 10 - guessCount} Turns`
     lastResult.style.backgroundColor = 'green';
+    setGameOver();
   }
   
-  else if (guessCount === 0) {
-     lastResult.textContent =  'Cest raté !!';
+  else if (guessCount === 0) 
+  {
+     lastResult.textContent =  'Game over!!';
      setGameOver();
   }
-     else {
-     lastResult.textContent = 'Faux !';
+     else 
+     {
+     lastResult.textContent = 'False !';
      lastResult.style.backgroundColor = 'red';
-     if (userGuess < randomNumber) {
-      lowOrHi.textContent = `${userGuess} is smaller`;
-
-     } else if (userGuess > randomNumber) {
-      lowOrHi.textContent = `${userGuess} is higher`;
      }
-     if (userGuess < 1 || userGuess > 100) {
+
+     if (userGuess < randomNumber) 
+     
+      lowOrHi.textContent = `${userGuess} is lower`;
+     
+     else if (userGuess > randomNumber) 
+    
+      lowOrHi.textContent = `${userGuess} is higher`;
+    
+     if (userGuess < 1 || userGuess > 100) 
+    {
       alert("please enter a number between 1 and 100");
-      compteur.textContent = '';
-      guesses.textContent = '';
-      lastResult.textContent = '';
-      lowOrHi.textContent = '';
+      compteur.textContent = 'Number of turns:';
+      guesses.textContent = 'Previous Guess:';
+      lastResult.textContent = 'True or False';
+      lowOrHi.textContent = 'Low or High';
       lastResult.style.backgroundColor = '';
       guessCount = 10;
-  }
-
-  }
-  guessCount--;
-  guessField.value = '';
-  guessField.focus();
+   }
+  
+   guessCount--;
+   guessField.value = '';
+   guessField.focus();
 }
 guessSubmit.addEventListener('click', checkGuess);
 
 function setGameOver() {
   guessField.disabled = true;
   guessSubmit.disabled = true;
-  resetButton = document.createElement('button');
+  resetButton.style.display = 'block';
   resetButton.textContent = 'Start new game';
-  document.body.appendChild(resetButton);
+  resetButton.style.backgroundColor = 'green';
+
   resetButton.addEventListener('click', resetGame);
   }
   function resetGame() {
     guessCount = 10;
-  
+    resetButton.style.display = 'none';
     let resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
       resetParas[i].textContent = '';
+      compteur.textContent = 'Number of turns:';
+      guesses.textContent = 'Previous Guess:';
+      lastResult.textContent = 'True or False';
+      lowOrHi.textContent = 'Low or High';
+      lastResult.style.backgroundColor = '';
     }
   
-    resetButton.parentNode.removeChild(resetButton);
+  
   
     guessField.disabled = false;
     guessSubmit.disabled = false;

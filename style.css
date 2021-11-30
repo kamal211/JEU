@@ -1,6 +1,6 @@
 #bloc-page
 {
-  width: 1000px;
+  width: 1400px;
   margin: auto;
   background-image: url("background.png");
   background-repeat: no-repeat;
@@ -10,45 +10,42 @@
 #title
   {
    
-    margin-left: -13rem;
-    margin-top: 1rem;
+    margin-top: 10px;
     font-family: 'Wallpoet', cursive;
     font-size: 74px;
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
     border-radius: 20px;
-   
-    width: 60%;
+    width: 45%;
   }
   
   .rules
   {
     display: block;
-    margin: 25em 45em;
+    margin: -18em 53em;
     margin-bottom: 0;
     text-align: center;
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
     border-radius: 20px;
-    width: 30em;
+    width: 481px;
+    height: 366px;
     
   }
   .rules h2
   {
     font-family: 'Raleway', sans-serif;
     font-size: 70px;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
   }
   .rules p
   {
-    margin-top: -2rem;
+    
     color: white;
     font-family: 'Raleway', sans-serif;
-    font-size: 40px;
+    font-size: 27px;
+    text-align: center;
   }
   
-  .chance
-  {
-    background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
-    border-radius: 20px;
-  }
   .guesses
   {
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
@@ -74,6 +71,8 @@
     width: 40rem;
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
     border-radius: 20px;
+    margin-left: 25em;
+    margin-top: 9em;
   }
   #guesshere
   {
@@ -99,11 +98,15 @@
   {
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
+    margin-left: 29%;
   }
   .chance
   {
-    width: 25rem;
- 
+    background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
+    border-radius: 20px;
+    width: 25em
+    ;
+   
     text-align: center;
   }
   .guesses
@@ -120,4 +123,14 @@
   {
     width: 25rem;
     text-align: center;
+  }
+  .button
+  {
+    background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
+    border-radius: 20px;
+    width: 25rem;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    
   }

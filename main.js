@@ -10,6 +10,7 @@ let guessField = document.querySelector('.guessField');
 let guessCount = 9;
 let resetButton = document.querySelector('.button');
 resetButton.style.display = 'none';
+
 guessField.focus();
 console.log(randomNumber);
 function checkGuess() 

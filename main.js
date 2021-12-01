@@ -13,6 +13,14 @@ resetButton.style.display = 'none';
 
 guessField.focus();
 console.log(randomNumber);
+var input = document.querySelector('.guessField');
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector('.guessSubmit').click();
+    
+  }
+});
 function checkGuess() 
 {
   let userGuess = Number(guessField.value);
@@ -35,6 +43,7 @@ function checkGuess()
   else if (guessCount === 0) 
   {
      lastResult.textContent =  'Game over!!';
+
      setGameOver();
   }
      else 
@@ -65,8 +74,11 @@ function checkGuess()
    guessCount--;
    guessField.value = '';
    guessField.focus();
+
+
 }
 guessSubmit.addEventListener('click', checkGuess);
+
 
 function setGameOver() {
   guessField.disabled = true;
@@ -97,10 +109,11 @@ function setGameOver() {
     guessField.value = '';
     guessField.focus();
   
-    lastResult.style.backgroundColor = 'white';
+    
   
     randomNumber = Math.floor(Math.random() * 100) + 1;
   }
+
 
   
 

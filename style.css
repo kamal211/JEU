@@ -60,6 +60,11 @@
     border-radius: 20px;
     margin-left: 19em;
     margin-top: 9em;
+    animation: ha 2s infinite;
+  }
+  @keyframes ha {
+    25% {background-color: rgba(176, 255, 19, 0.246);}
+    75% {background-color: rgba(55, 134, 253, 0.2795)  ;}
   }
   #guesshere
   {
@@ -71,6 +76,8 @@
   {
     width: 20rem;
     height: 4rem;
+    font-size: xx-large;
+    font-weight: bold;
     border-radius: 25px;
   }
   .guessSubmit
@@ -96,7 +103,9 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
+    animation: ha 2s infinite;
   }
+ 
   .guesses
   {
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
@@ -105,6 +114,7 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
+    animation: ha 2s infinite;
   }
   .lastResult
   {
@@ -114,6 +124,7 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
+    animation: ha 1.5s infinite;
   }
   .lowOrHi
   {
@@ -123,6 +134,7 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
+    animation: ha 2s infinite;
   }
   .button
   {
@@ -135,5 +147,5 @@
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
     padding-bottom: 50px;
-    
+    animation: ha 0s infinite;
   }

@@ -16,6 +16,7 @@
     background: linear-gradient(180deg, rgba(176, 255, 19, 0.43) 0%, rgba(55, 134, 253, 0.2795) 100%);
     border-radius: 20px;
     width: 45%;
+    animation: animated 8s infinite;
   }
   
   .rules
@@ -28,6 +29,7 @@
     border-radius: 20px;
     width: 478px;
     height: 326px;
+    animation: animated 8s infinite;
     
   }
   .rules h2
@@ -46,8 +48,6 @@
     text-align: center;
   }
   
-
-  
   .form
   {
     display: flex;
@@ -60,11 +60,13 @@
     border-radius: 20px;
     margin-left: 19em;
     margin-top: 9em;
-    animation: ha 2s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
+    
   }
-  @keyframes ha {
-    25% {background-color: rgba(176, 255, 19, 0.246);}
-    75% {background-color: rgba(55, 134, 253, 0.2795)  ;}
+  @keyframes animated {
+    80% {background-color: rgba(176, 255, 19, 0.246);}
+    20% {background-color: rgba(55, 134, 253, 0.2795)  ;}
   }
   #guesshere
   {
@@ -103,7 +105,8 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
-    animation: ha 2s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
   }
  
   .guesses
@@ -114,7 +117,8 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
-    animation: ha 2s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
   }
   .lastResult
   {
@@ -124,7 +128,8 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
-    animation: ha 1.5s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
   }
   .lowOrHi
   {
@@ -134,7 +139,8 @@
     height: 3rem;
     padding-top: 10px;
     text-align: center;
-    animation: ha 2s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
   }
   .button
   {
@@ -147,5 +153,6 @@
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
     padding-bottom: 50px;
-    animation: ha 0s infinite;
+    animation-name: animated;
+    animation-duration: 8s;
   }
